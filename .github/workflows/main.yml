@@ -8,5 +8,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: 23f3002303@ds.study.iitm.ac.in
+      - name: prime-cache-0c3c166
         run: echo "Hello, world!"
