@@ -7,6 +7,18 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: prime-cache-0c3c166
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache
+          key: ${{ runner.os }}-cache-${{ hashFiles('**/*.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-cache-
+
+      - name: Say Hello
         run: echo "Hello, world!"
